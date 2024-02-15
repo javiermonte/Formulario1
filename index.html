@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="orden">
+        <h1>REGISTRARSE</h1>
+        <input type="text" id="name" placeholder="Nombres" />
+        <input type="text" id="name" placeholder="apellidos" />
+        <label for="genero">Masculino
+            <input type="radio" name="genero" id="m">
+        </label>
+        <label for="genero">Femenino
+            <input type="radio" name="genero" id="f">
+        </label>
+        <input type="number" id="name" placeholder="Numero de telefono" />
+        <select name="tipo de documento" id="lista">
+            <option value="CC">cedula de ciudadania</option>
+            <option value="CE">cedula de extranjeria</option>
+        </select>
+        <input type="number" id="name" placeholder="numero de documento" />
+        <input type="text" id="name" placeholder="correo electronico" />
+        <input type="date" id="name" placeholder="fecha de nacimiento" />
+        <button onclick="enviar()">ENVIAR</button>
+    </div>
+</body>
+<script>
+    function enviar() {
+        let g = ""
+        console.log(document.getElementById("lista").value);
+        if (document.getElementById("m").checked){
+            console.log("Masculino");
+            g="Masculino"
+        }else{
+            console.log("Femenino");
+            g="Femenino"
+        }
+        let datos = {}
+        datos = {genero:g, tipodoc: document.getElementById("lista").value}
+        console.log(datos);
+        let data = []
+        data.push(datos)
+        console.log(data);
+    }
+</script>
+
+</html>
